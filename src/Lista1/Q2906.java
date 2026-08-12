@@ -1,3 +1,5 @@
+package Lista1;
+
 import java.util.*;
 
 public class Q2906 {
