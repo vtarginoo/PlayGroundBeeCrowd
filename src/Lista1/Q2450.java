@@ -18,12 +18,12 @@ public class Q2450 {
 
         for (int i = 0; i < linhas; i++) {
 
-            char[] line = scanner.nextLine().replace(" ", "").toCharArray();
+            String[] line = scanner.nextLine().split(" ");
             int positionDoZero = 300;
 
             for (int j = 0; j < members; j++) {
-                char daVez = line[j];
-                if (daVez != '0') {
+                String daVez = line[j];
+                if (daVez != "0") {
                     positionDoZero = j;
                     break;
                 }
