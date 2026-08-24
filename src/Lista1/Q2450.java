@@ -1,6 +1,7 @@
 package Lista1;
 
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Q2450 {
@@ -15,7 +16,7 @@ public class Q2450 {
 
 
         int[] zeroPositions = new int[linhas];
-
+        boolean soZero = true;
         for (int i = 0; i < linhas; i++) {
 
             String[] line = scanner.nextLine().split(" ");
@@ -23,7 +24,8 @@ public class Q2450 {
 
             for (int j = 0; j < members; j++) {
                 String daVez = line[j];
-                if (daVez != "0") {
+                if (!Objects.equals(daVez, "0")) {
+                    soZero = false;
                     positionDoZero = j;
                     break;
                 }
@@ -31,8 +33,13 @@ public class Q2450 {
             zeroPositions[i] = positionDoZero;
         }
 
+        if (soZero) {
+            System.out.println("S");
+            return; };
+
         int tamanho = zeroPositions.length;
         String result = "S";
+
 
         for (int i = 1; i < tamanho; i++ ){
 
@@ -60,6 +67,7 @@ public class Q2450 {
 
 
     }
+
 
 
 
